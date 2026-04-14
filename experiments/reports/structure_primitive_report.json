@@ -1,0 +1,1373 @@
+{
+  "summary": {
+    "case_count": 29,
+    "accuracy": 1.0,
+    "avg_engine_cost": 5.260344827586207,
+    "avg_transformer_cost": 46.51724137931034,
+    "avg_measured_ms": 0.10742413793103449,
+    "avg_dense_baseline_ms": 0.1498793103448276,
+    "oracle_route_accuracy": 0.7931034482758621,
+    "avg_route_regret_ms": 0.018572413793103447,
+    "routes": [
+      "egraph_hybrid",
+      "structure_graph",
+      "typed_hypergraph"
+    ],
+    "family_routes": {
+      "symbolic_rewrite": [
+        "egraph_hybrid"
+      ],
+      "program_transform": [
+        "egraph_hybrid"
+      ],
+      "proof_state": [
+        "egraph_hybrid"
+      ],
+      "hypergraph_native": [
+        "typed_hypergraph"
+      ],
+      "constraint_native": [
+        "structure_graph"
+      ],
+      "graph_native": [
+        "egraph_hybrid",
+        "typed_hypergraph"
+      ]
+    },
+    "family_oracles": {
+      "symbolic_rewrite": [
+        "egraph_hybrid",
+        "typed_hypergraph"
+      ],
+      "program_transform": [
+        "egraph_hybrid"
+      ],
+      "proof_state": [
+        "egraph_hybrid",
+        "structure_graph"
+      ],
+      "hypergraph_native": [
+        "egraph_hybrid",
+        "structure_graph"
+      ],
+      "constraint_native": [
+        "structure_graph"
+      ],
+      "graph_native": [
+        "egraph_hybrid",
+        "typed_hypergraph"
+      ]
+    },
+    "family_wins": {
+      "symbolic_rewrite": {
+        "egraph_hybrid": 5,
+        "typed_hypergraph": 1
+      },
+      "program_transform": {
+        "egraph_hybrid": 4
+      },
+      "proof_state": {
+        "egraph_hybrid": 3,
+        "structure_graph": 1
+      },
+      "hypergraph_native": {
+        "egraph_hybrid": 3,
+        "structure_graph": 1
+      },
+      "constraint_native": {
+        "structure_graph": 4
+      },
+      "graph_native": {
+        "egraph_hybrid": 3,
+        "typed_hypergraph": 4
+      }
+    },
+    "family_frontier": {
+      "symbolic_rewrite": {
+        "typed_hypergraph": 0.1216,
+        "egraph_hybrid": 0.0623,
+        "structure_graph": 0.1691
+      },
+      "program_transform": {
+        "typed_hypergraph": 0.1312,
+        "egraph_hybrid": 0.0617,
+        "structure_graph": 0.1456
+      },
+      "proof_state": {
+        "typed_hypergraph": 0.1804,
+        "egraph_hybrid": 0.1003,
+        "structure_graph": 0.1194
+      },
+      "hypergraph_native": {
+        "typed_hypergraph": 0.1134,
+        "egraph_hybrid": 0.0876,
+        "structure_graph": 0.1232
+      },
+      "constraint_native": {
+        "typed_hypergraph": 0.317,
+        "egraph_hybrid": 1.5071,
+        "structure_graph": 0.159
+      },
+      "graph_native": {
+        "typed_hypergraph": 0.1389,
+        "egraph_hybrid": 298.5198,
+        "structure_graph": 0.3321
+      }
+    },
+    "family_speedups": {
+      "symbolic_rewrite": 2.6508,
+      "program_transform": 3.2276,
+      "proof_state": 3.4579,
+      "hypergraph_native": 1.0256,
+      "constraint_native": 0.8062,
+      "graph_native": 1.2799
+    }
+  },
+  "rows": [
+    {
+      "case": "add_zero_right",
+      "family": "symbolic_rewrite",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 1.0,
+      "advisor_reason": "family_win_and_frontier:symbolic_rewrite:1.1673",
+      "reason": "lowest_calibrated_cost+oracle_family_bias:egraph_hybrid+oracle_signature_bias:egraph_hybrid+equivalence_bias",
+      "metadata": {
+        "equivalence_heavy": true
+      },
+      "correct": true,
+      "expected": "x",
+      "engine": "x",
+      "heuristic_cost": 3.0,
+      "gnn_cost": 6.0,
+      "transformer_cost": 9.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.0686,
+      "dense_baseline_ms": 0.3261,
+      "speedup_vs_dense": 4.7536,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.1098,
+        "egraph_hybrid": 0.0479,
+        "structure_graph": 0.1237,
+        "dense_attention": 0.3261
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": true,
+      "route_regret_ms": 0.0207,
+      "candidate_costs": {
+        "typed_hypergraph": 1.8716,
+        "egraph_hybrid": 0.5375556576,
+        "structure_graph": 2.406
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "mul_one_left",
+      "family": "symbolic_rewrite",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 1.0,
+      "advisor_reason": "family_win_and_frontier:symbolic_rewrite:1.1673",
+      "reason": "lowest_calibrated_cost+oracle_family_bias:egraph_hybrid+oracle_signature_bias:egraph_hybrid+equivalence_bias",
+      "metadata": {
+        "equivalence_heavy": true
+      },
+      "correct": true,
+      "expected": "x",
+      "engine": "x",
+      "heuristic_cost": 3.0,
+      "gnn_cost": 6.0,
+      "transformer_cost": 9.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.165,
+      "dense_baseline_ms": 0.1331,
+      "speedup_vs_dense": 0.8067,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.2191,
+        "egraph_hybrid": 0.0508,
+        "structure_graph": 0.168,
+        "dense_attention": 0.1331
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": true,
+      "route_regret_ms": 0.1142,
+      "candidate_costs": {
+        "typed_hypergraph": 1.8716,
+        "egraph_hybrid": 0.5375556576,
+        "structure_graph": 2.406
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "mul_zero_nested",
+      "family": "symbolic_rewrite",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 1.0,
+      "advisor_reason": "family_win_and_frontier:symbolic_rewrite:1.1673",
+      "reason": "lowest_calibrated_cost+oracle_family_bias:egraph_hybrid+oracle_signature_bias:egraph_hybrid+equivalence_bias",
+      "metadata": {
+        "equivalence_heavy": true
+      },
+      "correct": true,
+      "expected": "y",
+      "engine": "y",
+      "heuristic_cost": 5.0,
+      "gnn_cost": 12.0,
+      "transformer_cost": 25.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.0383,
+      "dense_baseline_ms": 0.1063,
+      "speedup_vs_dense": 2.7755,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.0793,
+        "egraph_hybrid": 0.0539,
+        "structure_graph": 0.1432,
+        "dense_attention": 0.1063
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": true,
+      "route_regret_ms": -0.0156,
+      "candidate_costs": {
+        "typed_hypergraph": 1.8716,
+        "egraph_hybrid": 0.5375556576,
+        "structure_graph": 2.406
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "const_fold",
+      "family": "symbolic_rewrite",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 1.0,
+      "advisor_reason": "family_win_and_frontier:symbolic_rewrite:1.1673",
+      "reason": "lowest_calibrated_cost+oracle_family_bias:egraph_hybrid+oracle_signature_bias:egraph_hybrid+equivalence_bias",
+      "metadata": {
+        "equivalence_heavy": true
+      },
+      "correct": true,
+      "expected": "5",
+      "engine": "5",
+      "heuristic_cost": 5.0,
+      "gnn_cost": 12.0,
+      "transformer_cost": 25.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.1182,
+      "dense_baseline_ms": 0.159,
+      "speedup_vs_dense": 1.3452,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.1416,
+        "egraph_hybrid": 0.0589,
+        "structure_graph": 0.1662,
+        "dense_attention": 0.159
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": true,
+      "route_regret_ms": 0.0593,
+      "candidate_costs": {
+        "typed_hypergraph": 1.8716,
+        "egraph_hybrid": 0.5375556576,
+        "structure_graph": 2.406
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "commutative_canonical",
+      "family": "symbolic_rewrite",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 1.0,
+      "advisor_reason": "family_win_and_frontier:symbolic_rewrite:1.1673",
+      "reason": "lowest_calibrated_cost+oracle_family_bias:egraph_hybrid+oracle_signature_bias:egraph_hybrid+equivalence_bias",
+      "metadata": {
+        "equivalence_heavy": true
+      },
+      "correct": true,
+      "expected": "add(add(x,y),z)",
+      "engine": "add(add(x,y),z)",
+      "heuristic_cost": 5.0,
+      "gnn_cost": 12.0,
+      "transformer_cost": 25.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.0593,
+      "dense_baseline_ms": 0.1082,
+      "speedup_vs_dense": 1.8246,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.1029,
+        "egraph_hybrid": 0.1207,
+        "structure_graph": 0.2991,
+        "dense_attention": 0.1082
+      },
+      "oracle_primitive": "typed_hypergraph",
+      "route_matches_oracle": false,
+      "route_regret_ms": -0.0436,
+      "candidate_costs": {
+        "typed_hypergraph": 1.8716,
+        "egraph_hybrid": 0.5375556576,
+        "structure_graph": 2.406
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "mixed",
+      "family": "symbolic_rewrite",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 1.0,
+      "advisor_reason": "family_win_and_frontier:symbolic_rewrite:1.1673",
+      "reason": "lowest_calibrated_cost+oracle_family_bias:egraph_hybrid+oracle_signature_bias:egraph_hybrid+equivalence_bias",
+      "metadata": {
+        "equivalence_heavy": true
+      },
+      "correct": true,
+      "expected": "mul(5,x)",
+      "engine": "mul(5,x)",
+      "heuristic_cost": 7.0,
+      "gnn_cost": 18.0,
+      "transformer_cost": 49.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.0386,
+      "dense_baseline_ms": 0.1698,
+      "speedup_vs_dense": 4.399,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.077,
+        "egraph_hybrid": 0.0417,
+        "structure_graph": 0.1146,
+        "dense_attention": 0.1698
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": true,
+      "route_regret_ms": -0.0031,
+      "candidate_costs": {
+        "typed_hypergraph": 1.8716,
+        "egraph_hybrid": 0.5375556576,
+        "structure_graph": 2.406
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "pipeline_identity_cleanup",
+      "family": "program_transform",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 0.75,
+      "advisor_reason": "family_win_and_frontier:program_transform:1.1656",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:egraph_hybrid+graph_bias+flow_bias+equivalence_bias",
+      "metadata": {
+        "flow_heavy": true,
+        "graph_preferred": true,
+        "pipeline_width": 4,
+        "branch_factor": 2
+      },
+      "correct": true,
+      "expected": "load",
+      "engine": "load",
+      "heuristic_cost": 5.0,
+      "gnn_cost": 12.0,
+      "transformer_cost": 25.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.0571,
+      "dense_baseline_ms": 0.1714,
+      "speedup_vs_dense": 3.0018,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.1083,
+        "egraph_hybrid": 0.0413,
+        "structure_graph": 0.1524,
+        "dense_attention": 0.1714
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": true,
+      "route_regret_ms": 0.0158,
+      "candidate_costs": {
+        "typed_hypergraph": 1.6352,
+        "egraph_hybrid": 0.7455177599999999,
+        "structure_graph": 1.9502712000000002
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "map_filter_fuse",
+      "family": "program_transform",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 0.75,
+      "advisor_reason": "family_win_and_frontier:program_transform:1.1656",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:egraph_hybrid+graph_bias+flow_bias+equivalence_bias",
+      "metadata": {
+        "flow_heavy": true,
+        "graph_preferred": true,
+        "pipeline_width": 6,
+        "branch_factor": 3
+      },
+      "correct": true,
+      "expected": "add(filter,map)",
+      "engine": "add(filter,map)",
+      "heuristic_cost": 5.0,
+      "gnn_cost": 12.0,
+      "transformer_cost": 25.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.0646,
+      "dense_baseline_ms": 0.1811,
+      "speedup_vs_dense": 2.8034,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.1407,
+        "egraph_hybrid": 0.0739,
+        "structure_graph": 0.1566,
+        "dense_attention": 0.1811
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": true,
+      "route_regret_ms": -0.0093,
+      "candidate_costs": {
+        "typed_hypergraph": 1.6352,
+        "egraph_hybrid": 0.7455177599999999,
+        "structure_graph": 1.9502712000000002
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "join_const_fold",
+      "family": "program_transform",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 0.75,
+      "advisor_reason": "family_win_and_frontier:program_transform:1.1656",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:egraph_hybrid+graph_bias+flow_bias+equivalence_bias",
+      "metadata": {
+        "flow_heavy": true,
+        "graph_preferred": true,
+        "pipeline_width": 5,
+        "branch_factor": 4
+      },
+      "correct": true,
+      "expected": "mul(5,join)",
+      "engine": "mul(5,join)",
+      "heuristic_cost": 7.0,
+      "gnn_cost": 18.0,
+      "transformer_cost": 49.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.0663,
+      "dense_baseline_ms": 0.1555,
+      "speedup_vs_dense": 2.3454,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.1241,
+        "egraph_hybrid": 0.0673,
+        "structure_graph": 0.1551,
+        "dense_attention": 0.1555
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": true,
+      "route_regret_ms": -0.001,
+      "candidate_costs": {
+        "typed_hypergraph": 1.6352,
+        "egraph_hybrid": 0.7455177599999999,
+        "structure_graph": 1.9502712000000002
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "wide_pipeline_balance",
+      "family": "program_transform",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 0.75,
+      "advisor_reason": "family_win_and_frontier:program_transform:1.1656",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:egraph_hybrid+graph_bias+flow_bias+equivalence_bias",
+      "metadata": {
+        "flow_heavy": true,
+        "graph_preferred": true,
+        "pipeline_width": 8,
+        "branch_factor": 5
+      },
+      "correct": true,
+      "expected": "add(add(filter,load),map)",
+      "engine": "add(add(filter,load),map)",
+      "heuristic_cost": 9.0,
+      "gnn_cost": 24.0,
+      "transformer_cost": 81.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.0666,
+      "dense_baseline_ms": 0.317,
+      "speedup_vs_dense": 4.7598,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.1517,
+        "egraph_hybrid": 0.0642,
+        "structure_graph": 0.1184,
+        "dense_attention": 0.317
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": true,
+      "route_regret_ms": 0.0024,
+      "candidate_costs": {
+        "typed_hypergraph": 1.6352,
+        "egraph_hybrid": 0.7455177599999999,
+        "structure_graph": 1.9502712000000002
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "premise_cleanup",
+      "family": "proof_state",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 1.0,
+      "advisor_reason": "family_win_and_frontier:proof_state:0.4864",
+      "reason": "lowest_calibrated_cost+oracle_family_bias:egraph_hybrid+oracle_signature_bias:egraph_hybrid+hypergraph_bias+higher_arity_bias+equivalence_bias",
+      "metadata": {
+        "relation_arity": 3,
+        "hypergraph_preferred": true,
+        "context_width": 4,
+        "dependency_fanout": 2
+      },
+      "correct": true,
+      "expected": "premise_a",
+      "engine": "premise_a",
+      "heuristic_cost": 5.0,
+      "gnn_cost": 12.0,
+      "transformer_cost": 25.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.0421,
+      "dense_baseline_ms": 0.1049,
+      "speedup_vs_dense": 2.4917,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.0908,
+        "egraph_hybrid": 0.0438,
+        "structure_graph": 0.1034,
+        "dense_attention": 0.1049
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": true,
+      "route_regret_ms": -0.0017,
+      "candidate_costs": {
+        "typed_hypergraph": 0.5816448000000001,
+        "egraph_hybrid": 0.2133552096,
+        "structure_graph": 0.9236
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "goal_context_fold",
+      "family": "proof_state",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 1.0,
+      "advisor_reason": "family_win_and_frontier:proof_state:0.4864",
+      "reason": "lowest_calibrated_cost+oracle_family_bias:egraph_hybrid+oracle_signature_bias:egraph_hybrid+hypergraph_bias+higher_arity_bias+equivalence_bias",
+      "metadata": {
+        "relation_arity": 5,
+        "hypergraph_preferred": true,
+        "context_width": 8,
+        "dependency_fanout": 4
+      },
+      "correct": true,
+      "expected": "mul(5,goal)",
+      "engine": "mul(5,goal)",
+      "heuristic_cost": 7.0,
+      "gnn_cost": 18.0,
+      "transformer_cost": 49.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.0539,
+      "dense_baseline_ms": 0.1542,
+      "speedup_vs_dense": 2.8609,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.1603,
+        "egraph_hybrid": 0.0588,
+        "structure_graph": 0.1438,
+        "dense_attention": 0.1542
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": true,
+      "route_regret_ms": -0.0049,
+      "candidate_costs": {
+        "typed_hypergraph": 0.6172848000000001,
+        "egraph_hybrid": 0.2271245184,
+        "structure_graph": 1.0019
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "tactic_premise_mix",
+      "family": "proof_state",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 1.0,
+      "advisor_reason": "family_win_and_frontier:proof_state:0.4864",
+      "reason": "lowest_calibrated_cost+oracle_family_bias:egraph_hybrid+oracle_signature_bias:egraph_hybrid+hypergraph_bias+higher_arity_bias+equivalence_bias",
+      "metadata": {
+        "relation_arity": 4,
+        "hypergraph_preferred": true,
+        "equivalence_heavy": true,
+        "context_width": 6,
+        "dependency_fanout": 3
+      },
+      "correct": true,
+      "expected": "add(premise_b,tactic)",
+      "engine": "add(premise_b,tactic)",
+      "heuristic_cost": 7.0,
+      "gnn_cost": 18.0,
+      "transformer_cost": 49.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.1751,
+      "dense_baseline_ms": 0.1119,
+      "speedup_vs_dense": 0.6391,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.3704,
+        "egraph_hybrid": 0.2452,
+        "structure_graph": 0.1196,
+        "dense_attention": 0.1119
+      },
+      "oracle_primitive": "structure_graph",
+      "route_matches_oracle": false,
+      "route_regret_ms": 0.0555,
+      "candidate_costs": {
+        "typed_hypergraph": 0.6309072,
+        "egraph_hybrid": 0.2283679008,
+        "structure_graph": 0.9927
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "goal_premise_weave",
+      "family": "proof_state",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 1.0,
+      "advisor_reason": "family_win_and_frontier:proof_state:0.4864",
+      "reason": "lowest_calibrated_cost+oracle_family_bias:egraph_hybrid+oracle_signature_bias:egraph_hybrid+hypergraph_bias+higher_arity_bias+equivalence_bias",
+      "metadata": {
+        "relation_arity": 6,
+        "hypergraph_preferred": true,
+        "context_width": 10,
+        "dependency_fanout": 5
+      },
+      "correct": true,
+      "expected": "add(add(goal,premise_a),premise_b)",
+      "engine": "add(add(goal,premise_a),premise_b)",
+      "heuristic_cost": 9.0,
+      "gnn_cost": 24.0,
+      "transformer_cost": 81.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.0493,
+      "dense_baseline_ms": 0.3865,
+      "speedup_vs_dense": 7.8398,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.1002,
+        "egraph_hybrid": 0.0534,
+        "structure_graph": 0.1107,
+        "dense_attention": 0.3865
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": true,
+      "route_regret_ms": -0.0041,
+      "candidate_costs": {
+        "typed_hypergraph": 0.6172848000000001,
+        "egraph_hybrid": 0.2271245184,
+        "structure_graph": 1.0019
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "bundle_cleanup",
+      "family": "hypergraph_native",
+      "route": "typed_hypergraph",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 0.75,
+      "advisor_reason": "family_win_and_frontier:hypergraph_native:0.6309",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:egraph_hybrid+hypergraph_bias+hyperedge_native_bias+higher_arity_bias+equivalence_bias",
+      "metadata": {
+        "hypergraph_preferred": true,
+        "hyperedge_native": true,
+        "relation_arity": 8,
+        "context_width": 14,
+        "dependency_fanout": 2
+      },
+      "correct": true,
+      "expected": "bundle",
+      "engine": "bundle",
+      "heuristic_cost": 5.0,
+      "gnn_cost": 12.0,
+      "transformer_cost": 25.0,
+      "engine_cost": 8.4,
+      "invariant": 12.0,
+      "gpu_backend": "sparse_tensor",
+      "measured_ms": 0.1222,
+      "dense_baseline_ms": 0.1109,
+      "speedup_vs_dense": 0.9075,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.0893,
+        "egraph_hybrid": 0.0557,
+        "structure_graph": 0.1332,
+        "dense_attention": 0.1109
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": false,
+      "route_regret_ms": 0.0665,
+      "candidate_costs": {
+        "typed_hypergraph": 0.31951260000000004,
+        "egraph_hybrid": 0.544756914,
+        "structure_graph": 1.3132
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "clause_context_fold",
+      "family": "hypergraph_native",
+      "route": "typed_hypergraph",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 0.75,
+      "advisor_reason": "family_win_and_frontier:hypergraph_native:0.6309",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:egraph_hybrid+hypergraph_bias+hyperedge_native_bias+higher_arity_bias+equivalence_bias",
+      "metadata": {
+        "hypergraph_preferred": true,
+        "hyperedge_native": true,
+        "relation_arity": 10,
+        "context_width": 18,
+        "dependency_fanout": 2
+      },
+      "correct": true,
+      "expected": "mul(5,clause)",
+      "engine": "mul(5,clause)",
+      "heuristic_cost": 7.0,
+      "gnn_cost": 18.0,
+      "transformer_cost": 49.0,
+      "engine_cost": 10.85,
+      "invariant": 15.5,
+      "gpu_backend": "sparse_tensor",
+      "measured_ms": 0.0869,
+      "dense_baseline_ms": 0.1073,
+      "speedup_vs_dense": 1.2348,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.0957,
+        "egraph_hybrid": 0.0472,
+        "structure_graph": 0.1179,
+        "dense_attention": 0.1073
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": false,
+      "route_regret_ms": 0.0397,
+      "candidate_costs": {
+        "typed_hypergraph": 0.31951260000000004,
+        "egraph_hybrid": 0.544756914,
+        "structure_graph": 1.3132
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "witness_bundle_mix",
+      "family": "hypergraph_native",
+      "route": "typed_hypergraph",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 0.75,
+      "advisor_reason": "family_win_and_frontier:hypergraph_native:0.6309",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:egraph_hybrid+hypergraph_bias+hyperedge_native_bias+higher_arity_bias+equivalence_bias",
+      "metadata": {
+        "hypergraph_preferred": true,
+        "hyperedge_native": true,
+        "relation_arity": 9,
+        "context_width": 16,
+        "dependency_fanout": 3
+      },
+      "correct": true,
+      "expected": "add(bundle,witness)",
+      "engine": "add(bundle,witness)",
+      "heuristic_cost": 7.0,
+      "gnn_cost": 18.0,
+      "transformer_cost": 49.0,
+      "engine_cost": 10.85,
+      "invariant": 15.5,
+      "gpu_backend": "sparse_tensor",
+      "measured_ms": 0.1107,
+      "dense_baseline_ms": 0.1234,
+      "speedup_vs_dense": 1.1147,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.0982,
+        "egraph_hybrid": 0.0507,
+        "structure_graph": 0.1115,
+        "dense_attention": 0.1234
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": false,
+      "route_regret_ms": 0.06,
+      "candidate_costs": {
+        "typed_hypergraph": 0.31951260000000004,
+        "egraph_hybrid": 0.544756914,
+        "structure_graph": 1.3132
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "context_clause_weave",
+      "family": "hypergraph_native",
+      "route": "typed_hypergraph",
+      "advisor_primitive": "egraph_hybrid",
+      "advisor_confidence": 0.75,
+      "advisor_reason": "family_win_and_frontier:hypergraph_native:0.6309",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:egraph_hybrid+hypergraph_bias+hyperedge_native_bias+higher_arity_bias+equivalence_bias",
+      "metadata": {
+        "hypergraph_preferred": true,
+        "hyperedge_native": true,
+        "relation_arity": 12,
+        "context_width": 22,
+        "dependency_fanout": 3
+      },
+      "correct": true,
+      "expected": "add(add(clause,context),witness)",
+      "engine": "add(add(clause,context),witness)",
+      "heuristic_cost": 9.0,
+      "gnn_cost": 24.0,
+      "transformer_cost": 81.0,
+      "engine_cost": 13.3,
+      "invariant": 19.0,
+      "gpu_backend": "sparse_tensor",
+      "measured_ms": 0.1558,
+      "dense_baseline_ms": 0.1317,
+      "speedup_vs_dense": 0.8453,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.1705,
+        "egraph_hybrid": 0.1968,
+        "structure_graph": 0.1302,
+        "dense_attention": 0.1317
+      },
+      "oracle_primitive": "structure_graph",
+      "route_matches_oracle": false,
+      "route_regret_ms": 0.0256,
+      "candidate_costs": {
+        "typed_hypergraph": 0.31951260000000004,
+        "egraph_hybrid": 0.544756914,
+        "structure_graph": 1.3132
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "domain_cleanup",
+      "family": "constraint_native",
+      "route": "structure_graph",
+      "advisor_primitive": "structure_graph",
+      "advisor_confidence": 0.75,
+      "advisor_reason": "family_win_and_frontier:constraint_native:0.5447",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:structure_graph+hypergraph_bias+constraint_native_bias+higher_arity_bias+equivalence_bias",
+      "metadata": {
+        "hypergraph_preferred": true,
+        "constraint_native": true,
+        "relation_arity": 10,
+        "context_width": 18,
+        "dependency_fanout": 4,
+        "constraint_rounds": 6,
+        "propagation_depth": 3
+      },
+      "correct": true,
+      "expected": "domain",
+      "engine": "domain",
+      "heuristic_cost": 5.0,
+      "gnn_cost": 12.0,
+      "transformer_cost": 25.0,
+      "engine_cost": 7.2,
+      "invariant": 8.0,
+      "gpu_backend": "message_passing",
+      "measured_ms": 0.1252,
+      "dense_baseline_ms": 0.1023,
+      "speedup_vs_dense": 0.8171,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.199,
+        "egraph_hybrid": 0.391,
+        "structure_graph": 0.116,
+        "dense_attention": 0.1023
+      },
+      "oracle_primitive": "structure_graph",
+      "route_matches_oracle": true,
+      "route_regret_ms": 0.0092,
+      "candidate_costs": {
+        "typed_hypergraph": 0.60983604,
+        "egraph_hybrid": 24.665472,
+        "structure_graph": 0.5136521
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "clause_support_fold",
+      "family": "constraint_native",
+      "route": "structure_graph",
+      "advisor_primitive": "structure_graph",
+      "advisor_confidence": 0.75,
+      "advisor_reason": "family_win_and_frontier:constraint_native:0.5447",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:structure_graph+hypergraph_bias+constraint_native_bias+higher_arity_bias+equivalence_bias",
+      "metadata": {
+        "hypergraph_preferred": true,
+        "constraint_native": true,
+        "relation_arity": 12,
+        "context_width": 20,
+        "dependency_fanout": 5,
+        "constraint_rounds": 8,
+        "propagation_depth": 4
+      },
+      "correct": true,
+      "expected": "mul(5,clause)",
+      "engine": "mul(5,clause)",
+      "heuristic_cost": 7.0,
+      "gnn_cost": 18.0,
+      "transformer_cost": 49.0,
+      "engine_cost": 10.35,
+      "invariant": 11.5,
+      "gpu_backend": "message_passing",
+      "measured_ms": 0.1059,
+      "dense_baseline_ms": 0.1091,
+      "speedup_vs_dense": 1.0302,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.245,
+        "egraph_hybrid": 1.5552,
+        "structure_graph": 0.1822,
+        "dense_attention": 0.1091
+      },
+      "oracle_primitive": "structure_graph",
+      "route_matches_oracle": true,
+      "route_regret_ms": -0.0763,
+      "candidate_costs": {
+        "typed_hypergraph": 0.60983604,
+        "egraph_hybrid": 24.665472,
+        "structure_graph": 0.5136521
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "signal_domain_mix",
+      "family": "constraint_native",
+      "route": "structure_graph",
+      "advisor_primitive": "structure_graph",
+      "advisor_confidence": 0.75,
+      "advisor_reason": "family_win_and_frontier:constraint_native:0.5447",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:structure_graph+hypergraph_bias+constraint_native_bias+higher_arity_bias+equivalence_bias",
+      "metadata": {
+        "hypergraph_preferred": true,
+        "constraint_native": true,
+        "relation_arity": 9,
+        "context_width": 16,
+        "dependency_fanout": 4,
+        "constraint_rounds": 7,
+        "propagation_depth": 4
+      },
+      "correct": true,
+      "expected": "add(domain,signal)",
+      "engine": "add(domain,signal)",
+      "heuristic_cost": 7.0,
+      "gnn_cost": 18.0,
+      "transformer_cost": 49.0,
+      "engine_cost": 10.35,
+      "invariant": 11.5,
+      "gpu_backend": "message_passing",
+      "measured_ms": 0.1052,
+      "dense_baseline_ms": 0.1052,
+      "speedup_vs_dense": 1.0,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.3145,
+        "egraph_hybrid": 0.5606,
+        "structure_graph": 0.1595,
+        "dense_attention": 0.1052
+      },
+      "oracle_primitive": "structure_graph",
+      "route_matches_oracle": true,
+      "route_regret_ms": -0.0543,
+      "candidate_costs": {
+        "typed_hypergraph": 0.60983604,
+        "egraph_hybrid": 24.665472,
+        "structure_graph": 0.5136521
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "support_clause_weave",
+      "family": "constraint_native",
+      "route": "structure_graph",
+      "advisor_primitive": "structure_graph",
+      "advisor_confidence": 0.75,
+      "advisor_reason": "family_win_and_frontier:constraint_native:0.5447",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:structure_graph+hypergraph_bias+constraint_native_bias+higher_arity_bias+equivalence_bias",
+      "metadata": {
+        "hypergraph_preferred": true,
+        "constraint_native": true,
+        "relation_arity": 14,
+        "context_width": 24,
+        "dependency_fanout": 6,
+        "constraint_rounds": 10,
+        "propagation_depth": 5
+      },
+      "correct": true,
+      "expected": "add(add(clause,signal),support)",
+      "engine": "add(add(clause,signal),support)",
+      "heuristic_cost": 9.0,
+      "gnn_cost": 24.0,
+      "transformer_cost": 81.0,
+      "engine_cost": 13.5,
+      "invariant": 15.0,
+      "gpu_backend": "message_passing",
+      "measured_ms": 0.4004,
+      "dense_baseline_ms": 0.1511,
+      "speedup_vs_dense": 0.3774,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.5094,
+        "egraph_hybrid": 3.5214,
+        "structure_graph": 0.1781,
+        "dense_attention": 0.1511
+      },
+      "oracle_primitive": "structure_graph",
+      "route_matches_oracle": true,
+      "route_regret_ms": 0.2223,
+      "candidate_costs": {
+        "typed_hypergraph": 0.60983604,
+        "egraph_hybrid": 24.665472,
+        "structure_graph": 0.5136521
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "stream_cleanup",
+      "family": "graph_native",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "typed_hypergraph",
+      "advisor_confidence": 0.5714,
+      "advisor_reason": "family_win_and_frontier:graph_native:0.1881",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:egraph_hybrid+graph_bias+graph_native_bias+flow_bias+equivalence_bias",
+      "metadata": {
+        "graph_preferred": true,
+        "graph_native": true,
+        "flow_heavy": true,
+        "pipeline_width": 10,
+        "branch_factor": 6,
+        "path_length": 5,
+        "dependency_fanout": 2,
+        "aggregation_bias": 1
+      },
+      "correct": true,
+      "expected": "stream",
+      "engine": "stream",
+      "heuristic_cost": 5.0,
+      "gnn_cost": 12.0,
+      "transformer_cost": 25.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.0482,
+      "dense_baseline_ms": 0.101,
+      "speedup_vs_dense": 2.0954,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.0973,
+        "egraph_hybrid": 0.041,
+        "structure_graph": 0.2583,
+        "dense_attention": 0.101
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": true,
+      "route_regret_ms": 0.0072,
+      "candidate_costs": {
+        "typed_hypergraph": 0.24079000000000003,
+        "egraph_hybrid": 0.08068553999999999,
+        "structure_graph": 0.1947042
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "filter_merge_fold",
+      "family": "graph_native",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "typed_hypergraph",
+      "advisor_confidence": 0.5714,
+      "advisor_reason": "family_win_and_frontier:graph_native:0.1881",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:egraph_hybrid+graph_bias+graph_native_bias+flow_bias+equivalence_bias",
+      "metadata": {
+        "graph_preferred": true,
+        "graph_native": true,
+        "flow_heavy": true,
+        "pipeline_width": 12,
+        "branch_factor": 8,
+        "path_length": 6,
+        "dependency_fanout": 3,
+        "aggregation_bias": 1
+      },
+      "correct": true,
+      "expected": "mul(5,filter)",
+      "engine": "mul(5,filter)",
+      "heuristic_cost": 7.0,
+      "gnn_cost": 18.0,
+      "transformer_cost": 49.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.0532,
+      "dense_baseline_ms": 0.1069,
+      "speedup_vs_dense": 2.0094,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.1073,
+        "egraph_hybrid": 0.0428,
+        "structure_graph": 0.2364,
+        "dense_attention": 0.1069
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": true,
+      "route_regret_ms": 0.0104,
+      "candidate_costs": {
+        "typed_hypergraph": 0.24079000000000003,
+        "egraph_hybrid": 0.08068553999999999,
+        "structure_graph": 0.1947042
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "merge_stream_mix",
+      "family": "graph_native",
+      "route": "typed_hypergraph",
+      "advisor_primitive": "typed_hypergraph",
+      "advisor_confidence": 0.5714,
+      "advisor_reason": "family_win_and_frontier:graph_native:0.1881",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:typed_hypergraph+graph_bias+graph_native_bias+aggregation_bias_mid+flow_bias+equivalence_bias",
+      "metadata": {
+        "graph_preferred": true,
+        "graph_native": true,
+        "flow_heavy": true,
+        "pipeline_width": 14,
+        "branch_factor": 10,
+        "path_length": 8,
+        "dependency_fanout": 4,
+        "aggregation_bias": 3
+      },
+      "correct": true,
+      "expected": "add(merge,stream)",
+      "engine": "add(merge,stream)",
+      "heuristic_cost": 7.0,
+      "gnn_cost": 18.0,
+      "transformer_cost": 49.0,
+      "engine_cost": 10.85,
+      "invariant": 15.5,
+      "gpu_backend": "sparse_tensor",
+      "measured_ms": 0.0926,
+      "dense_baseline_ms": 0.0889,
+      "speedup_vs_dense": 0.96,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.092,
+        "egraph_hybrid": 0.3105,
+        "structure_graph": 0.3109,
+        "dense_attention": 0.0889
+      },
+      "oracle_primitive": "typed_hypergraph",
+      "route_matches_oracle": true,
+      "route_regret_ms": 0.0006,
+      "candidate_costs": {
+        "typed_hypergraph": 0.124699696,
+        "egraph_hybrid": 0.34552049999999995,
+        "structure_graph": 0.2084076
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "sink_dependency_weave",
+      "family": "graph_native",
+      "route": "typed_hypergraph",
+      "advisor_primitive": "typed_hypergraph",
+      "advisor_confidence": 0.5714,
+      "advisor_reason": "family_win_and_frontier:graph_native:0.1881",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:typed_hypergraph+graph_bias+graph_native_bias+aggregation_bias_high+flow_bias+equivalence_bias",
+      "metadata": {
+        "graph_preferred": true,
+        "graph_native": true,
+        "flow_heavy": true,
+        "pipeline_width": 18,
+        "branch_factor": 12,
+        "path_length": 10,
+        "dependency_fanout": 5,
+        "aggregation_bias": 4
+      },
+      "correct": true,
+      "expected": "add(add(filter,merge),sink)",
+      "engine": "add(add(filter,merge),sink)",
+      "heuristic_cost": 9.0,
+      "gnn_cost": 24.0,
+      "transformer_cost": 81.0,
+      "engine_cost": 13.3,
+      "invariant": 19.0,
+      "gpu_backend": "sparse_tensor",
+      "measured_ms": 0.1593,
+      "dense_baseline_ms": 0.1569,
+      "speedup_vs_dense": 0.9849,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.1158,
+        "egraph_hybrid": 6.2941,
+        "structure_graph": 0.4562,
+        "dense_attention": 0.1569
+      },
+      "oracle_primitive": "typed_hypergraph",
+      "route_matches_oracle": true,
+      "route_regret_ms": 0.0435,
+      "candidate_costs": {
+        "typed_hypergraph": 0.09070512,
+        "egraph_hybrid": 622.7865072000001,
+        "structure_graph": 0.1978299
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "graph_chain_balance",
+      "family": "graph_native",
+      "route": "typed_hypergraph",
+      "advisor_primitive": "typed_hypergraph",
+      "advisor_confidence": 0.5714,
+      "advisor_reason": "family_win_and_frontier:graph_native:0.1881",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:typed_hypergraph+graph_bias+graph_native_bias+aggregation_bias_high+flow_bias+equivalence_bias",
+      "metadata": {
+        "graph_preferred": true,
+        "graph_native": true,
+        "flow_heavy": true,
+        "pipeline_width": 20,
+        "branch_factor": 14,
+        "path_length": 12,
+        "dependency_fanout": 6,
+        "aggregation_bias": 5
+      },
+      "correct": true,
+      "expected": "add(add(filter,sink),stream)",
+      "engine": "add(add(filter,sink),stream)",
+      "heuristic_cost": 9.0,
+      "gnn_cost": 24.0,
+      "transformer_cost": 81.0,
+      "engine_cost": 13.3,
+      "invariant": 19.0,
+      "gpu_backend": "sparse_tensor",
+      "measured_ms": 0.2142,
+      "dense_baseline_ms": 0.1639,
+      "speedup_vs_dense": 0.7652,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.2428,
+        "egraph_hybrid": 312.6548,
+        "structure_graph": 0.4464,
+        "dense_attention": 0.1639
+      },
+      "oracle_primitive": "typed_hypergraph",
+      "route_matches_oracle": true,
+      "route_regret_ms": -0.0286,
+      "candidate_costs": {
+        "typed_hypergraph": 0.09070512,
+        "egraph_hybrid": 622.7865072000001,
+        "structure_graph": 0.1978299
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "graph_local_filter",
+      "family": "graph_native",
+      "route": "egraph_hybrid",
+      "advisor_primitive": "typed_hypergraph",
+      "advisor_confidence": 0.5714,
+      "advisor_reason": "family_win_and_frontier:graph_native:0.1881",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:egraph_hybrid+graph_bias+graph_native_bias+flow_bias+equivalence_bias",
+      "metadata": {
+        "graph_preferred": true,
+        "graph_native": true,
+        "flow_heavy": true,
+        "pipeline_width": 9,
+        "branch_factor": 4,
+        "path_length": 4,
+        "dependency_fanout": 2,
+        "aggregation_bias": 1
+      },
+      "correct": true,
+      "expected": "add(filter,merge)",
+      "engine": "add(filter,merge)",
+      "heuristic_cost": 7.0,
+      "gnn_cost": 18.0,
+      "transformer_cost": 49.0,
+      "engine_cost": 1.0,
+      "invariant": 2.0,
+      "gpu_backend": "gather-scatter",
+      "measured_ms": 0.0632,
+      "dense_baseline_ms": 0.1064,
+      "speedup_vs_dense": 1.6835,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.1356,
+        "egraph_hybrid": 0.0627,
+        "structure_graph": 0.3377,
+        "dense_attention": 0.1064
+      },
+      "oracle_primitive": "egraph_hybrid",
+      "route_matches_oracle": true,
+      "route_regret_ms": 0.0005,
+      "candidate_costs": {
+        "typed_hypergraph": 0.24079000000000003,
+        "egraph_hybrid": 0.08068553999999999,
+        "structure_graph": 0.1947042
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    },
+    {
+      "case": "graph_aggregate_sink",
+      "family": "graph_native",
+      "route": "typed_hypergraph",
+      "advisor_primitive": "typed_hypergraph",
+      "advisor_confidence": 0.5714,
+      "advisor_reason": "family_win_and_frontier:graph_native:0.1881",
+      "reason": "lowest_calibrated_cost+oracle_signature_bias:typed_hypergraph+graph_bias+graph_native_bias+aggregation_bias_high+flow_bias+equivalence_bias",
+      "metadata": {
+        "graph_preferred": true,
+        "graph_native": true,
+        "flow_heavy": true,
+        "pipeline_width": 22,
+        "branch_factor": 16,
+        "path_length": 14,
+        "dependency_fanout": 7,
+        "aggregation_bias": 6
+      },
+      "correct": true,
+      "expected": "add(add(merge,sink),stream)",
+      "engine": "add(add(merge,sink),stream)",
+      "heuristic_cost": 9.0,
+      "gnn_cost": 24.0,
+      "transformer_cost": 81.0,
+      "engine_cost": 13.3,
+      "invariant": 19.0,
+      "gpu_backend": "sparse_tensor",
+      "measured_ms": 0.2093,
+      "dense_baseline_ms": 0.0965,
+      "speedup_vs_dense": 0.4611,
+      "all_primitive_ms": {
+        "typed_hypergraph": 0.1816,
+        "egraph_hybrid": 1770.2324,
+        "structure_graph": 0.2787,
+        "dense_attention": 0.0965
+      },
+      "oracle_primitive": "typed_hypergraph",
+      "route_matches_oracle": true,
+      "route_regret_ms": 0.0277,
+      "candidate_costs": {
+        "typed_hypergraph": 0.09070512,
+        "egraph_hybrid": 622.7865072000001,
+        "structure_graph": 0.1978299
+      },
+      "device": "NVIDIA GeForce RTX 4070 Laptop GPU"
+    }
+  ]
+}
