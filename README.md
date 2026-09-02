@@ -1,5 +1,7 @@
 # structure-primitive-lab
 
+> **Research status:** early-stage prototype. Current comparisons use correctness checks and synthetic cost models; the repository does **not** yet establish a measured GPU speedup or superiority over Transformer/GNN implementations.
+
 Post-matrix, post-attention primitives for structure-heavy computation.
 
 This repository is a research harness for testing whether structure-aware
@@ -28,6 +30,8 @@ hypothesis:
 > structure-heavy tasks may have a better native primitive than dense matrix
 > computation.
 
+This is a hypothesis under test, not a demonstrated general replacement for matrix or attention-based computation.
+
 ## Current MVP
 
 The current MVP includes:
@@ -37,6 +41,8 @@ The current MVP includes:
 - structural complexity scoring
 - primitive routing
 - correctness and synthetic cost comparison against baselines
+
+Synthetic cost comparisons are useful for exercising the routing and evaluation framework, but they should not be reported as hardware performance results. A performance claim requires measured kernels under a recorded hardware/software environment.
 
 ## Quick start
 
@@ -70,7 +76,21 @@ The first success target is narrow and measurable:
 
 - on symbolic rewrite workloads
 - achieve equal correctness to dense and graph baselines
-- while selecting cheaper structure-aware execution paths on average
+- while selecting lower-cost structure-aware execution paths under the current model
+
+A later systems-level success criterion should replace estimated costs with wall-clock, memory, and throughput measurements from equivalent implementations.
+
+## Reproducibility boundary
+
+When reporting future benchmark results, record at minimum:
+
+- repository commit;
+- task/configuration;
+- correctness oracle result;
+- baseline implementation;
+- hardware and software environment;
+- warmup and timing procedure;
+- raw measurements across repeated runs.
 
 ## Next steps
 
