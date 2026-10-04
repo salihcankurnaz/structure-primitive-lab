@@ -123,3 +123,13 @@ The runner writes a machine-readable JSON artifact containing environment metada
 correctness, median/p95 latency, CUDA peak memory, per-size speedups, and the frozen
 `PROMOTE`/`HOLD` gate. A pass is only a systems-qualification result for the registered
 workloads; it is not evidence of general Transformer or GNN superiority.
+
+
+For the Colab/G4 path with automatic source and result bundles:
+
+```bash
+python scripts/run_primitive_gauntlet_v1.py --profile g4 --device cuda --warmup 5 --repeats 10
+```
+
+This creates both `SOURCE_PRIMITIVE_GAUNTLET_V1_*.zip` and
+`RESULT_PRIMITIVE_GAUNTLET_V1_*.zip` under `artifacts/primitive_gauntlet_v1/`.
