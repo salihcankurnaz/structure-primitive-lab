@@ -98,3 +98,28 @@ When reporting future benchmark results, record at minimum:
 2. Add proof-state transition tasks.
 3. Add real GPU lowering experiments through existing tensor backends.
 4. Replace synthetic cost models with measured kernels.
+
+
+## Primitive Gauntlet V1
+
+The first hardware qualification stage is frozen in
+[`docs/PRIMITIVE_GAUNTLET_V1_PROTOCOL.md`](docs/PRIMITIVE_GAUNTLET_V1_PROTOCOL.md).
+It compares semantically matched dense and structure-native implementations for graph
+propagation, hypergraph reduction, and equivalence-class reduction.
+
+CPU semantic smoke test:
+
+```bash
+python -m splab.gauntlet.runner --profile smoke --device cpu --warmup 0 --repeats 1
+```
+
+G4 qualification run:
+
+```bash
+python -m splab.gauntlet.runner --profile g4 --device cuda --warmup 5 --repeats 10
+```
+
+The runner writes a machine-readable JSON artifact containing environment metadata,
+correctness, median/p95 latency, CUDA peak memory, per-size speedups, and the frozen
+`PROMOTE`/`HOLD` gate. A pass is only a systems-qualification result for the registered
+workloads; it is not evidence of general Transformer or GNN superiority.
