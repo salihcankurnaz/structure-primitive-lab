@@ -133,3 +133,27 @@ python scripts/run_primitive_gauntlet_v1.py --profile g4 --device cuda --warmup 
 
 This creates both `SOURCE_PRIMITIVE_GAUNTLET_V1_*.zip` and
 `RESULT_PRIMITIVE_GAUNTLET_V1_*.zip` under `artifacts/primitive_gauntlet_v1/`.
+
+
+### Official Colab CLI path
+
+The official Google Colab CLI supports G4 allocation and one-shot remote execution.
+On Linux/macOS (or WSL on Windows), from this repository:
+
+```bash
+python -m pip install google-colab-cli
+bash scripts/run_colab_cli_g4.sh
+```
+
+The first `--auth=oauth2` invocation may ask for a browser authorization code. The launcher
+keeps the named runtime only long enough to download the fixed result/source/report files,
+then calls `colab stop` to release the VM.
+
+The deterministic local outputs are:
+
+```text
+primitive_gauntlet_downloads/
+  RESULT_PRIMITIVE_GAUNTLET_V1.zip
+  SOURCE_PRIMITIVE_GAUNTLET_V1.zip
+  PRIMITIVE_GAUNTLET_V1_G4.json
+```
