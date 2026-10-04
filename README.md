@@ -98,3 +98,62 @@ When reporting future benchmark results, record at minimum:
 2. Add proof-state transition tasks.
 3. Add real GPU lowering experiments through existing tensor backends.
 4. Replace synthetic cost models with measured kernels.
+
+
+## Primitive Gauntlet V1
+
+The first hardware qualification stage is frozen in
+[`docs/PRIMITIVE_GAUNTLET_V1_PROTOCOL.md`](docs/PRIMITIVE_GAUNTLET_V1_PROTOCOL.md).
+It compares semantically matched dense and structure-native implementations for graph
+propagation, hypergraph reduction, and equivalence-class reduction.
+
+CPU semantic smoke test:
+
+```bash
+python -m splab.gauntlet.runner --profile smoke --device cpu --warmup 0 --repeats 1
+```
+
+G4 qualification run:
+
+```bash
+python -m splab.gauntlet.runner --profile g4 --device cuda --warmup 5 --repeats 10
+```
+
+The runner writes a machine-readable JSON artifact containing environment metadata,
+correctness, median/p95 latency, CUDA peak memory, per-size speedups, and the frozen
+`PROMOTE`/`HOLD` gate. A pass is only a systems-qualification result for the registered
+workloads; it is not evidence of general Transformer or GNN superiority.
+
+
+For the Colab/G4 path with automatic source and result bundles:
+
+```bash
+python scripts/run_primitive_gauntlet_v1.py --profile g4 --device cuda --warmup 5 --repeats 10
+```
+
+This creates both `SOURCE_PRIMITIVE_GAUNTLET_V1_*.zip` and
+`RESULT_PRIMITIVE_GAUNTLET_V1_*.zip` under `artifacts/primitive_gauntlet_v1/`.
+
+
+### Official Colab CLI path
+
+The official Google Colab CLI supports G4 allocation and one-shot remote execution.
+On Linux/macOS (or WSL on Windows), from this repository:
+
+```bash
+python -m pip install google-colab-cli
+bash scripts/run_colab_cli_g4.sh
+```
+
+The first `--auth=oauth2` invocation may ask for a browser authorization code. The launcher
+keeps the named runtime only long enough to download the fixed result/source/report files,
+then calls `colab stop` to release the VM.
+
+The deterministic local outputs are:
+
+```text
+primitive_gauntlet_downloads/
+  RESULT_PRIMITIVE_GAUNTLET_V1.zip
+  SOURCE_PRIMITIVE_GAUNTLET_V1.zip
+  PRIMITIVE_GAUNTLET_V1_G4.json
+```
